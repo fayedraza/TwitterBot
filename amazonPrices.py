@@ -154,16 +154,7 @@ class prices:
             titleOfDeal = productDealsReadyToScrape.find('span', class_='a-icon a-icon-star a-star-4-5') #final choice
             return titleOfDeal.text
 
-
-CONSUMER_KEY = ''
-CONSUMER_SECRET = ''
-ACCESS_KEY = ''
-ACCESS_SECRET = ''
-
-auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
-
-api = tweepy.API(auth)
+api = Twython(config.api_key, config.api_secret, config.access_token, config.token_secret)
 
 
 #true/false variables, representing each category
